@@ -4,7 +4,6 @@
 #include <pthread.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#define WS_IMPLEMENTATION
 #define TEENY_SHA1_IMPLEMENTATION
 #define B64_IMPLEMENTATION
 #include "ws.h"
@@ -61,7 +60,6 @@ WsState *ws_listen(uint16_t port) {
     ws->fd = fd;
     return ws;
 }
-
 
 int read_http_header(int fd, char *buffer, int max_len) {
     int total = 0;
